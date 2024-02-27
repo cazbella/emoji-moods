@@ -1,0 +1,18 @@
+
+
+Question 2 
+(12 marks total)
+A. Demonstrated knowledge of unshift(), shift(), and split() (6 marks)
+B. Demonstrated knowledge of object methods (3 marks)
+C. Demonstrated knowledge of DOM events (3 marks)
+2.1.   
+○Define unshift(), shift() and split() 
+○Using the topic of “CFGdegree”, provide an example of unshift(), shift() and 
+split().  (E.g.The theme could be the different CFGdegree streams.)
+2.2. 
+○Define object methods
+○Using the topic of “Programming Languages”, create a new object and object 
+methods. 
+2.3. 
+○Explain the onmouseover event
+○Explain two other DOM events of your choosing
