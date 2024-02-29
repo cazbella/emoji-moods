@@ -1,0 +1,9 @@
+Welcome page
+
+get started button - how are you feeling - positive or negative
+
+show dropdown with positive or negative to pick from ddepending on choice
+
+ask would they like a quote for the day 
+
+display that
