@@ -21,9 +21,36 @@ startButton.addEventListener('click', function () {
 
 // need to the correct dropdown based on user input
 //boolean
-//if statement
+//if statement code from lesson
+
+if (userInput === 'happy') {
+    happyDiv.style.display = 'block';
+    sadDiv.style.display = 'none'; // Hide sad dropdown/div
+} else if (userInput === 'sad') {
+    sadDiv.style.display = 'block';
+    happyDiv.style.display = 'none'; // Hide happy dropdown/div
+} else {
+    alert('Invalid input. Please enter "happy" or "sad".');
+}
+});
 
 //need array of emojis
+//array contains objects linked to dropdown options
+let happyEmojiArray = [
+    { emoji: "😊", word: "Happy" },
+    { emoji: "😌", word: "Peaceful" },
+    { emoji: "😄", word: "Funny" },
+    { emoji: "🥰", word: "Lovely" },
+];
+
+// Array for sad emotions
+let sadEmojiArray = [
+    { emoji: "😴", word: "Tired" },
+    { emoji: "😠", word: "Upset" },
+    { emoji: "😢", word: "Sad" },
+    { emoji: "😡", word: "Angry" },
+];
+
 
 //need to use happy or sad array depending on choice
 
