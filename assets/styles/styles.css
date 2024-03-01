@@ -1,3 +1,67 @@
-.p {
-    color: rgb(212, 204, 220);
+body {
+    background-color: #7bcfe6; /* Change to your desired color value */
 }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.start-button {
+    color: rgb(197, 161, 232);
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+
+
+.h1 {
+    color: black;
+    text-align: center;
+}
+
+.title-emojis {
+    text-align: center;
+}
+
+.h2 {
+    color: black;
+    text-align: center;
+}
+
+.h3 {
+    color: black;
+    text-align: center;
+}
+
+
+.start-button {
+    display: block;
+    align-items: center;
+    color: rgb(197, 161, 232);
+}
+
+
+.dropdown-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 10vh; 
+}
+
+.emoji-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; 
+}
+
+.quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; 
+}
+

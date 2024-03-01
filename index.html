@@ -11,26 +11,51 @@
 </head>
 
 <body>
-    <h1 class="p"> Emoji Moods </h1>
-    <h2>How are you feeling today?</h2>
-    <h3>Need an emoji to help show how you feel? Get started below</h3>
-    <p>
+    <h1 class="h1"> Emoji Moods </h1>
+    <h2 class="h2">How are you feeling?</h2>
+    <div class="title-emojis">😊😴😌😄😠🥰</div>
+    <h3 class="h3">Need an emoji to help show how you feel? Get started below</h3>
 
+    <div class="button-container">
         <button class="start-button">Start Here!</button>
-    </p>
+    </div>
+
 
     <!-- dropdown menu examples from https://blog.hubspot.com/website/html-dropdown -->
+    <div class="dropdown-container">
+        <div class="happy" style="display: none;">
+            <select id="dropdown-happy">
+                <option value="" selected>Select a Happy Mood</option>
+                <option value="Happy">Happy</option>
+                <option value="Peaceful">Peaceful</option>
+                <option value="Funny">Funny</option>
+                <option value="Lovely">Lovely</option>
+            </select>
+            <button>See my Mood</button>
+        </div>
 
-    <select id="dropdown">
-        <option value="">Select an option</option>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-    </select>
+        <div class="sad" style="display: none;">
+            <select id="dropdown-sad">
+                <option value="" selected>Select a Sad Mood</option>
+                <option value="Tired">Tired</option>
+                <option value="Upset">Upset</option>
+                <option value="Sad">Sad</option>
+                <option value="Angry">Angry</option>
+            </select>
+            <button>See my Mood</button>
+        </div>
+    </div>
 
-    <div id="emojiContainer"></div>
 
 
+
+    <div class="emoji-container" id="emojiContainer"></div>
+
+
+
+    <div class="quoteContainer" id="quoteContainer"></div>
+
+    <script src="./assets/logic/logic.js"></script>
 </body>
 
 </html>
