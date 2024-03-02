@@ -7,7 +7,7 @@ body {
     justify-content: center;
 }
 
-.start-button, .quote-button {
+.start-button, .quote-button, .restart-button {
     color: rgb(130, 39, 221);
     padding: 10px 20px;
     font-size: 18px;
