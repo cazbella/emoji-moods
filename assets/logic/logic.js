@@ -250,11 +250,49 @@ const inspirationalQuotes = [
     },
 ];
 
+// function to display a random quote and author
+function displayRandomQuote() {
+    
+    const quoteContainer = document.querySelector('.quoteContainer');
+    const authorContainer = document.querySelector('.author-container');
+    
 
-function showInspirationalQuote() {
 
+    //(uses class)
+
+
+    // uses for loop (requirement) to get random index from array of quotes
+    //https://stackoverflow.com/questions/75166534/how-do-i-use-a-loop-to-pick-random-characters-from-an-array
+    //
+    let randomIndex;
+    for (let i = 0; i < 1; i++) {
+        randomIndex = Math.floor(Math.random() * inspirationalQuotes.length);
+    }
+
+
+    //get the random quote and its author
+    //square brackets denote the array. randomIndex is the variable that gets random posision in array with for loop &math.random
+    const randomQuote = inspirationalQuotes[randomIndex].quote;
+    const randomAuthor = inspirationalQuotes[randomIndex].author;
+
+    // append to quote container
+ 
+    quoteContainer.textContent = randomQuote;
+
+
+    // append to author container
+    authorContainer.textContent = randomAuthor;
 }
 
+// event listener to the quote button
+document.querySelector('.quote-button').addEventListener('click', function() {
+    // hides the quote button
+    const quoteButton = document.querySelector('.quote-button');
+    quoteButton.style.display = 'none';
+
+    // calls the function
+    displayRandomQuote();
+});
 
 
 
