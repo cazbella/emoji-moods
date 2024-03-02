@@ -1,9 +1,5 @@
 body {
-<<<<<<< HEAD
-    background-color: #7bcfe6; 
-=======
     background-color: #7bcfe6;
->>>>>>> f02631c6fd113145d587967d63383ec2ad97a6d8
 }
 
 .button-container {
@@ -18,6 +14,7 @@ body {
     border: none;
     border-radius: 5px;
     background-color: white;
+    border: black solid 1px ;
 }
 
 

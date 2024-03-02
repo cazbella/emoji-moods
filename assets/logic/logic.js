@@ -1,3 +1,7 @@
+//page wasn't loading https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
+//also did this in last course
+document.addEventListener('DOMContentLoaded', function() {
+
 //identifies start button
 const startButton = document.querySelector('.start-button');
 
@@ -14,7 +18,7 @@ startButton.addEventListener('click', function () {
     const happyDiv = document.querySelector('.happy');
     const sadDiv = document.querySelector('.sad');
 
-// Clear the content of the emoji and quote containers if user wants another go
+// clear the content of the emoji and quote containers if user wants another go?
 //changed to move button so need to figure this out
 // document.getElementById('emojiContainer').innerHTML = '';
 // document.getElementById('quoteContainer').innerHTML = '';
@@ -56,7 +60,63 @@ let sadEmojiArray = [
 
 //need a for loop
 //match user choice to array content/position
-//need event listeners for see my mood button
+//need functiom for displaying emoji
+
+function displayEmoji(userInput) {
+    const emojiContainer = document.getElementById('emojiContainer');
+    let emojiArray;
+
+    // choose the emoji array based on the user input from text
+   if (userInput === 'happy') {
+    emojiArray = happyEmojiArray;
+} else if (userInput === 'sad') {
+    emojiArray = sadEmojiArray;
+} else {
+    // Handle invalid input
+    emojiContainer.innerHTML = 'Invalid input';
+    return;
+}
+
+// Get the selected value from the dropdown
+const selectedValue = document.getElementById('dropdown-' + userInput).value;
+
+//logs
+console.log('Selected value:', selectedValue); 
+
+console.log('Emoji array:', emojiArray);
+
+// need to find the emoji object corresponding to the selected value
+//arrow function
+const selectedEmoji = emojiArray.find(emoji => emoji.word === selectedValue);
+
+console.log('Selected emoji:', selectedEmoji); // Log the selected emoji object
+
+// Check if undefined
+//error statement
+//!NOT!!
+if (!selectedEmoji) {
+    console.error('Emoji not found for selected value:', selectedValue);
+    return;
+}
+
+// display the selected emoji and word in the emoji container
+
+emojiContainer.innerHTML = selectedEmoji.emoji + ' ' + selectedEmoji.word;
+}
+
+// need to add event listener to the see my mood button inside the happy div
+document.querySelector('.happy button').addEventListener('click', function() {
+displayEmoji('happy');
+});
+//could do in html too 
+
+// event listener to the button inside the sad div
+document.querySelector('.sad button').addEventListener('click', function() {
+displayEmoji('sad');
+});
+});
+
+
 
 //loop through quote array instead
 //https://www.southernliving.com/culture/sad-quotes
@@ -160,7 +220,6 @@ const inspirationalQuotes = [
     },
 ];
 
-console.log(inspirationalQuotes);
 
 
 
