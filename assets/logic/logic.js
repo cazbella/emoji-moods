@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
 //identifies start button
 const startButton = document.querySelector('.start-button');
 
+const quoteButton = document.querySelector('.quote-button');
+
+//hide quote button until needed
+quoteButton.style.display = 'none';
+
 //https://www.shecodes.io/athena/11102-how-to-trigger-a-prompt-on-button-click-in-javascript#:~:text=addEventListener('click'%2C%20function,log(userInput)%3B%20%7D)%3B
 // Add an event listener to the button that listens for the click 'event'
 startButton.addEventListener('click', function () {
@@ -14,6 +19,9 @@ startButton.addEventListener('click', function () {
     //hide after clicked
     startButton.style.display = 'none';
     console.log(userInput);
+
+    //hide h3 when button clicked
+    document.querySelector('.h3').style.display = 'none';
 
     const happyDiv = document.querySelector('.happy');
     const sadDiv = document.querySelector('.sad');
@@ -40,19 +48,20 @@ if (userInput === 'happy') {
 
 //need array of emojis
 //array contains objects linked to dropdown options
+//need class to target with css
 let happyEmojiArray = [
-    { emoji: "😊", word: "Happy" },
-    { emoji: "😌", word: "Peaceful" },
-    { emoji: "😄", word: "Funny" },
-    { emoji: "🥰", word: "Lovely" },
+    { emoji: "😊", word: "Happy", class: "emoji" },
+    { emoji: "😌", word: "Peaceful", class: "emoji" },
+    { emoji: "😄", word: "Funny", class: "emoji" },
+    { emoji: "🥰", word: "Lovely", class: "emoji" },
 ];
 
 // Array for sad emotions
 let sadEmojiArray = [
-    { emoji: "😴", word: "Tired" },
-    { emoji: "😠", word: "Upset" },
-    { emoji: "😢", word: "Sad" },
-    { emoji: "😡", word: "Angry" },
+    { emoji: "😴", word: "Tired", class: "emoji" },
+    { emoji: "😠", word: "Upset", class: "emoji" },
+    { emoji: "😢", word: "Sad", class: "emoji" },
+    { emoji: "😡", word: "Angry", class: "emoji" },
 ];
 
 
@@ -100,19 +109,40 @@ if (!selectedEmoji) {
 }
 
 // display the selected emoji and word in the emoji container
-
-emojiContainer.innerHTML = selectedEmoji.emoji + ' ' + selectedEmoji.word;
+//can't target with css - want to make dynamically instead according to lesson
+// emojiContainer.innerHTML = selectedEmoji.emoji + ' ' + selectedEmoji.word;
+const emojiElement = document.createElement('div');
+emojiElement.textContent = selectedEmoji.emoji + ' ' + selectedEmoji.word;
+emojiElement.classList.add('emoji'); //  emoji class for styling css
+emojiContainer.appendChild(emojiElement);
 }
 
 // need to add event listener to the see my mood button inside the happy div
 document.querySelector('.happy button').addEventListener('click', function() {
 displayEmoji('happy');
+
+const happyDropdown = document.querySelector('.dropdown-happy');
+happyDropdown.style.display = 'none';
+document.querySelector('.happy button').style.display = 'none';
+quoteButton.style.display = 'block';
 });
 //could do in html too 
 
 // event listener to the button inside the sad div
 document.querySelector('.sad button').addEventListener('click', function() {
 displayEmoji('sad');
+
+const sadDropdown = document.querySelector('.dropdown-sad');
+sadDropdown.style.display = 'none';
+document.querySelector('.sad button').style.display = 'none';
+quoteButton.style.display = 'block';
+
+//need to hide buttons and dropdown on click
+//https://community.qualtrics.com/custom-code-12/show-hide-buttons-how-to-hide-a-button-when-another-button-is-clicked-22159#:~:text=You%20can%20just%20use%20the,hide()%20for%20the%20same.
+// document.querySelector('.sad button').style.display = 'none';
+document.querySelector('.happy').style.display = 'none';
+// document.querySelector('.dropdown-sad').style.display = 'none';
+// document.querySelector('.dropdown-happy').style.display = 'none';
 });
 });
 
@@ -220,6 +250,10 @@ const inspirationalQuotes = [
     },
 ];
 
+
+function showInspirationalQuote() {
+
+}
 
 
 

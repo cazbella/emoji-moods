@@ -7,7 +7,7 @@ body {
     justify-content: center;
 }
 
-.start-button {
+.start-button, .quote-button {
     color: rgb(197, 161, 232);
     padding: 10px 20px;
     font-size: 18px;
@@ -15,6 +15,14 @@ body {
     border-radius: 5px;
     background-color: white;
     border: black solid 1px ;
+    display: block;
+    align-items: center;
+    color: rgb(197, 161, 232);
+    margin-top: 20px;
+}
+
+.quote-button {
+    margin-top: 50px;
 }
 
 
@@ -38,13 +46,6 @@ body {
 }
 
 
-.start-button {
-    display: block;
-    align-items: center;
-    color: rgb(197, 161, 232);
-}
-
-
 .dropdown-container {
     display: flex;
     justify-content: center; 
@@ -58,6 +59,11 @@ body {
     align-items: center;
     height: 20vh; 
 }
+
+.emoji {
+    font-size: 70px;
+}
+
 
 .quote-container {
     display: flex;

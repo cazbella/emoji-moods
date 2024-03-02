@@ -14,7 +14,7 @@
     <h1 class="h1"> Emoji Moods </h1>
     <h2 class="h2">How are you feeling?</h2>
     <div class="title-emojis">😊😴😌😄😠🥰</div>
-    <h3 class="h3">Need an emoji to help show how you feel? Get started below</h3>
+    <h3 class="h3" id="h3">Need an emoji to help show how you feel? Get started below</h3>
 
     <div class="button-container">
         <button class="start-button">Start Here!</button>
@@ -24,7 +24,7 @@
     <!-- dropdown menu examples from https://blog.hubspot.com/website/html-dropdown -->
     <div class="dropdown-container">
         <div class="happy" style="display: none;">
-            <select id="dropdown-happy">
+            <select id="dropdown-happy" class="dropdown-happy">
                 <option value="" selected>Select a Happy Mood</option>
                 <option value="Happy">Happy</option>
                 <option value="Peaceful">Peaceful</option>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="sad" style="display: none;">
-            <select id="dropdown-sad">
+            <select id="dropdown-sad" class="dropdown-sad">
                 <option value="" selected>Select a Sad Mood</option>
                 <option value="Tired">Tired</option>
                 <option value="Upset">Upset</option>
@@ -48,9 +48,11 @@
 
 
 
-
     <div class="emoji-container" id="emojiContainer"></div>
 
+    <div class="button-container">
+        <button class="quote-button">❤️ Click here for an inspirational quote ❤️</button>
+    </div>
 
 
     <div class="quoteContainer" id="quoteContainer"></div>
