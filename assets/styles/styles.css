@@ -8,7 +8,7 @@ body {
 }
 
 .start-button, .quote-button {
-    color: rgb(197, 161, 232);
+    color: rgb(130, 39, 221);
     padding: 10px 20px;
     font-size: 18px;
     border: none;
@@ -17,8 +17,17 @@ body {
     border: black solid 1px ;
     display: block;
     align-items: center;
-    color: rgb(197, 161, 232);
     margin-top: 20px;
+}
+
+.happy-button, .sad-button {
+    color: rgb(130, 39, 221);
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    border: black solid 1px;
 }
 
 .quote-button {
@@ -29,28 +38,45 @@ body {
 .h1 {
     color: black;
     text-align: center;
+    font-size: 55px;
+    text-decoration: underline;
 }
 
 .title-emojis {
     text-align: center;
+    font-size: 60px;
 }
 
-.h2 {
+.h2, .h3 {
     color: black;
     text-align: center;
 }
-
-.h3 {
-    color: black;
-    text-align: center;
-}
-
 
 .dropdown-container {
     display: flex;
     justify-content: center; 
     align-items: center;
     height: 10vh; 
+}
+
+.dropdown-sad, .dropdown-happy {
+    background-color: rgb(251, 249, 246);
+    border: black solid 1px;
+    color: rgb(130, 39, 221);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: background-color 0.3s; 
+}
+
+/* https://www.hostm.com/how-to/css/change-cursor-to-hand-on-hover#:~:text=Use%20the%20cursor%20CSS%20property,pointer%20when%20hovering%20over%20links. */
+
+
+.dropdown-sad:hover,
+.dropdown-happy:hover {
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
 }
 
 .emoji-container {
@@ -61,14 +87,25 @@ body {
 }
 
 .emoji {
-    font-size: 70px;
+    font-size: 60px;
 }
 
 
-.quote-container {
+.quoteContainer {
+    font-size: 30px;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh; 
+    height: 10vh; 
+    margin-top: 30px;
 }
 
+.author-container {
+    font-size: 20px;
+    font-style: italic; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; 
+}

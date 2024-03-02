@@ -14,7 +14,7 @@
     <h1 class="h1"> Emoji Moods </h1>
     <h2 class="h2">How are you feeling?</h2>
     <div class="title-emojis">😊😴😌😄😠🥰</div>
-    <h3 class="h3" id="h3">Need an emoji to help show how you feel? Get started below</h3>
+    <h3 class="h3" id="h3">Need an emoji to help show how you feel? Click the button below to get started.</h3>
 
     <div class="button-container">
         <button class="start-button">Start Here!</button>
@@ -31,7 +31,7 @@
                 <option value="Funny">Funny</option>
                 <option value="Lovely">Lovely</option>
             </select>
-            <button>See my Mood</button>
+            <button class="happy-button">See my Mood</button>
         </div>
 
         <div class="sad" style="display: none;">
@@ -42,7 +42,7 @@
                 <option value="Sad">Sad</option>
                 <option value="Angry">Angry</option>
             </select>
-            <button>See my Mood</button>
+            <button class="sad-button">See my Mood</button>
         </div>
     </div>
 
@@ -59,6 +59,12 @@
         <br>
         <div class="author-container" id="author-container"></div>
     </div>
+
+        <!-- need to workout how to get this to work -->
+    <div class="button-container">
+        <button class="restart-button" style="display: none;">Try Again!</button>
+    </div>
+    
 
     <script src="./assets/logic/logic.js"></script>
 </body>

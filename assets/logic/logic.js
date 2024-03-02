@@ -1,149 +1,153 @@
 //page wasn't loading https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
 //also did this in last course
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
-//identifies start button
-const startButton = document.querySelector('.start-button');
+    //identifies start button
+    const startButton = document.querySelector('.start-button');
 
-const quoteButton = document.querySelector('.quote-button');
+    const quoteButton = document.querySelector('.quote-button');
 
-//hide quote button until needed
-quoteButton.style.display = 'none';
+    //hide quote button until needed
+    quoteButton.style.display = 'none';
 
-//https://www.shecodes.io/athena/11102-how-to-trigger-a-prompt-on-button-click-in-javascript#:~:text=addEventListener('click'%2C%20function,log(userInput)%3B%20%7D)%3B
-// Add an event listener to the button that listens for the click 'event'
-startButton.addEventListener('click', function () {
-    // Display the prompt when the button is clicked
+    //https://www.shecodes.io/athena/11102-how-to-trigger-a-prompt-on-button-click-in-javascript#:~:text=addEventListener('click'%2C%20function,log(userInput)%3B%20%7D)%3B
+    // Add an event listener to the button that listens for the click 'event'
+    startButton.addEventListener('click', function () {
+        // Display the prompt when the button is clicked
 
-    const userInput = prompt('Are you happy or sad?').toLowerCase(); //to make input lowercase
-    //hide after clicked
-    startButton.style.display = 'none';
-    console.log(userInput);
+        const userInput = prompt('Are you happy or sad?').toLowerCase(); //to make input lowercase
 
-    //hide h3 when button clicked
-    document.querySelector('.h3').style.display = 'none';
+        console.log(userInput);
 
-    const happyDiv = document.querySelector('.happy');
-    const sadDiv = document.querySelector('.sad');
+        //hide h3 when button clicked
+        document.querySelector('.h3').style.display = 'none';
 
-// clear the content of the emoji and quote containers if user wants another go?
-//changed to move button so need to figure this out
-// document.getElementById('emojiContainer').innerHTML = '';
-// document.getElementById('quoteContainer').innerHTML = '';
+        const happyDiv = document.querySelector('.happy');
+        const sadDiv = document.querySelector('.sad');
 
-// need to the correct dropdown based on user input
-//boolean
-//if statement code from lesson
+        // clear the content of the emoji and quote containers if user wants another go?
+        //changed to move button so need to figure this out
+        // document.getElementById('emojiContainer').innerHTML = '';
+        // document.getElementById('quoteContainer').innerHTML = '';
 
-if (userInput === 'happy') {
-    happyDiv.style.display = 'block';
-    sadDiv.style.display = 'none'; // Hide sad dropdown/div
-} else if (userInput === 'sad') {
-    sadDiv.style.display = 'block';
-    happyDiv.style.display = 'none'; // Hide happy dropdown/div
-} else {
-    alert('Invalid input. Please enter "happy" or "sad".');
-}
-});
+        // need to the correct dropdown based on user input
+        //boolean
+        //if statement code from lesson
 
-//need array of emojis
-//array contains objects linked to dropdown options
-//need class to target with css
-let happyEmojiArray = [
-    { emoji: "😊", word: "Happy", class: "emoji" },
-    { emoji: "😌", word: "Peaceful", class: "emoji" },
-    { emoji: "😄", word: "Funny", class: "emoji" },
-    { emoji: "🥰", word: "Lovely", class: "emoji" },
-];
+        if (userInput === 'happy') {
+            happyDiv.style.display = 'block';
+            sadDiv.style.display = 'none'; // Hide sad dropdown/div
+            //hide start button 
+            startButton.style.display = 'none';
+        } else if (userInput === 'sad') {
+            sadDiv.style.display = 'block';
+            happyDiv.style.display = 'none'; // Hide happy dropdown/div
+            //hide start button
+            startButton.style.display = 'none';
 
-// Array for sad emotions
-let sadEmojiArray = [
-    { emoji: "😴", word: "Tired", class: "emoji" },
-    { emoji: "😠", word: "Upset", class: "emoji" },
-    { emoji: "😢", word: "Sad", class: "emoji" },
-    { emoji: "😡", word: "Angry", class: "emoji" },
-];
+        } else {
+            alert('Invalid input. Please enter "happy" or "sad".');
+        }
+    });
+
+    //need array of emojis
+    //array contains objects linked to dropdown options
+    //need class to target with css
+    let happyEmojiArray = [
+        { emoji: "😊", word: "Happy", class: "emoji" },
+        { emoji: "😌", word: "Peaceful", class: "emoji" },
+        { emoji: "😄", word: "Funny", class: "emoji" },
+        { emoji: "🥰", word: "Lovely", class: "emoji" },
+    ];
+
+    // Array for sad emotions
+    let sadEmojiArray = [
+        { emoji: "😴", word: "Tired", class: "emoji" },
+        { emoji: "😠", word: "Upset", class: "emoji" },
+        { emoji: "😢", word: "Sad", class: "emoji" },
+        { emoji: "😡", word: "Angry", class: "emoji" },
+    ];
 
 
-//need to use happy or sad array depending on choice
+    //need to use happy or sad array depending on choice
 
-//need a for loop
-//match user choice to array content/position
-//need functiom for displaying emoji
+    //need a for loop
+    //match user choice to array content/position
+    //need functiom for displaying emoji
 
-function displayEmoji(userInput) {
-    const emojiContainer = document.getElementById('emojiContainer');
-    let emojiArray;
+    function displayEmoji(userInput) {
+        const emojiContainer = document.getElementById('emojiContainer');
+        let emojiArray;
 
-    // choose the emoji array based on the user input from text
-   if (userInput === 'happy') {
-    emojiArray = happyEmojiArray;
-} else if (userInput === 'sad') {
-    emojiArray = sadEmojiArray;
-} else {
-    // Handle invalid input
-    emojiContainer.innerHTML = 'Invalid input';
-    return;
-}
+        // choose the emoji array based on the user input from text
+        if (userInput === 'happy') {
+            emojiArray = happyEmojiArray;
+        } else if (userInput === 'sad') {
+            emojiArray = sadEmojiArray;
+        } else {
+            // Handle invalid input
+            emojiContainer.innerHTML = 'Invalid input';
+            return;
+        }
 
-// Get the selected value from the dropdown
-const selectedValue = document.getElementById('dropdown-' + userInput).value;
+        // Get the selected value from the dropdown
+        const selectedValue = document.getElementById('dropdown-' + userInput).value;
 
-//logs
-console.log('Selected value:', selectedValue); 
+        //logs
+        console.log('Selected value:', selectedValue);
 
-console.log('Emoji array:', emojiArray);
+        console.log('Emoji array:', emojiArray);
 
-// need to find the emoji object corresponding to the selected value
-//arrow function
-const selectedEmoji = emojiArray.find(emoji => emoji.word === selectedValue);
+        // need to find the emoji object corresponding to the selected value
+        //arrow function
+        const selectedEmoji = emojiArray.find(emoji => emoji.word === selectedValue);
 
-console.log('Selected emoji:', selectedEmoji); // Log the selected emoji object
+        console.log('Selected emoji:', selectedEmoji); // Log the selected emoji object
 
-// Check if undefined
-//error statement
-//!NOT!!
-if (!selectedEmoji) {
-    console.error('Emoji not found for selected value:', selectedValue);
-    return;
-}
+        // Check if undefined
+        //error statement
+        //!NOT!!
+        if (!selectedEmoji) {
+            console.error('Emoji not found for selected value:', selectedValue);
+            return;
+        }
 
-// display the selected emoji and word in the emoji container
-//can't target with css - want to make dynamically instead according to lesson
-// emojiContainer.innerHTML = selectedEmoji.emoji + ' ' + selectedEmoji.word;
-const emojiElement = document.createElement('div');
-emojiElement.textContent = selectedEmoji.emoji + ' ' + selectedEmoji.word;
-emojiElement.classList.add('emoji'); //  emoji class for styling css
-emojiContainer.appendChild(emojiElement);
-}
+        // display the selected emoji and word in the emoji container
+        //can't target with css - want to make dynamically instead according to lesson
+        // emojiContainer.innerHTML = selectedEmoji.emoji + ' ' + selectedEmoji.word;
+        const emojiElement = document.createElement('div');
+        emojiElement.textContent = selectedEmoji.emoji + ' ' + selectedEmoji.word;
+        emojiElement.classList.add('emoji'); //  emoji class for styling css
+        emojiContainer.appendChild(emojiElement);
+    }
 
-// need to add event listener to the see my mood button inside the happy div
-document.querySelector('.happy button').addEventListener('click', function() {
-displayEmoji('happy');
+    // need to add event listener to the see my mood button inside the happy div
+    document.querySelector('.happy button').addEventListener('click', function () {
+        displayEmoji('happy');
 
-const happyDropdown = document.querySelector('.dropdown-happy');
-happyDropdown.style.display = 'none';
-document.querySelector('.happy button').style.display = 'none';
-quoteButton.style.display = 'block';
-});
-//could do in html too 
+        const happyDropdown = document.querySelector('.dropdown-happy');
+        happyDropdown.style.display = 'none';
+        document.querySelector('.happy button').style.display = 'none';
+        quoteButton.style.display = 'block';
+    });
+    //could do in html too 
 
-// event listener to the button inside the sad div
-document.querySelector('.sad button').addEventListener('click', function() {
-displayEmoji('sad');
+    // event listener to the button inside the sad div
+    document.querySelector('.sad button').addEventListener('click', function () {
+        displayEmoji('sad');
 
-const sadDropdown = document.querySelector('.dropdown-sad');
-sadDropdown.style.display = 'none';
-document.querySelector('.sad button').style.display = 'none';
-quoteButton.style.display = 'block';
+        const sadDropdown = document.querySelector('.dropdown-sad');
+        sadDropdown.style.display = 'none';
+        document.querySelector('.sad button').style.display = 'none';
+        quoteButton.style.display = 'block';
 
-//need to hide buttons and dropdown on click
-//https://community.qualtrics.com/custom-code-12/show-hide-buttons-how-to-hide-a-button-when-another-button-is-clicked-22159#:~:text=You%20can%20just%20use%20the,hide()%20for%20the%20same.
-// document.querySelector('.sad button').style.display = 'none';
-document.querySelector('.happy').style.display = 'none';
-// document.querySelector('.dropdown-sad').style.display = 'none';
-// document.querySelector('.dropdown-happy').style.display = 'none';
-});
+        //need to hide buttons and dropdown on click
+        //https://community.qualtrics.com/custom-code-12/show-hide-buttons-how-to-hide-a-button-when-another-button-is-clicked-22159#:~:text=You%20can%20just%20use%20the,hide()%20for%20the%20same.
+        // document.querySelector('.sad button').style.display = 'none';
+        document.querySelector('.happy').style.display = 'none';
+        // document.querySelector('.dropdown-sad').style.display = 'none';
+        // document.querySelector('.dropdown-happy').style.display = 'none';
+    });
 });
 
 
@@ -252,10 +256,10 @@ const inspirationalQuotes = [
 
 // function to display a random quote and author
 function displayRandomQuote() {
-    
+
     const quoteContainer = document.querySelector('.quoteContainer');
     const authorContainer = document.querySelector('.author-container');
-    
+
 
 
     //(uses class)
@@ -276,7 +280,7 @@ function displayRandomQuote() {
     const randomAuthor = inspirationalQuotes[randomIndex].author;
 
     // append to quote container
- 
+
     quoteContainer.textContent = randomQuote;
 
 
@@ -285,16 +289,25 @@ function displayRandomQuote() {
 }
 
 // event listener to the quote button
-document.querySelector('.quote-button').addEventListener('click', function() {
+document.querySelector('.quote-button').addEventListener('click', function () {
     // hides the quote button
     const quoteButton = document.querySelector('.quote-button');
     quoteButton.style.display = 'none';
 
     // calls the function
     displayRandomQuote();
+
+    // reveal the restart button
+    const restartButton = document.querySelector('.restart-button');
+    restartButton.style.display = 'block';
 });
 
 
+// event listener for the restart button
+document.querySelector('.restart-button').addEventListener('click', function () {
+    // reload the page like refreshing
+    location.reload();
+});
 
 
 
