@@ -297,20 +297,20 @@ document.querySelector('.quote-button').addEventListener('click', function () {
     // calls the function
     displayRandomQuote();
 
-    // reveal the restart button
-    const restartButton = document.querySelector('.restart-button');
-    restartButton.style.display = 'block';
-});
-
-
-// event listener for the restart button
-document.querySelector('.restart-button').addEventListener('click', function () {
-    // reload the page like refreshing
-    location.reload();
-});
-
-
-
+     // create restart button dynamically
+     const restartButton = document.createElement('button');
+     restartButton.classList.add('restart-button');
+     restartButton.textContent = 'Try Again!';
+     
+     // add restart button 
+     document.body.appendChild(restartButton);
+ 
+     // event listener for restart button
+     restartButton.addEventListener('click', function () {
+         // reload the page to reset the state https://www.freecodecamp.org/news/refresh-the-page-in-javascript-js-reload-window-tutorial/#:~:text=reload(),to%20the%20browser%27s%20Refresh%20button.
+         location.reload();
+     });
+    });
 
 // Create a web app that takes input from the user and updates the web page based on the 
 // input. The HTML and CSS should be simple but present. The primary focus is on JavaScript. 
@@ -323,12 +323,12 @@ document.querySelector('.restart-button').addEventListener('click', function () 
 // You should:
 // + Use boolean values and if..else statements to branch logic of your program  YES
 // + Use a data structure like an array to store values YES
-// + Use a loop or a while loop to reduce repetition
-// + Use functions to make code reusable
+// + Use a loop or a while loop to reduce repetition YES
+// + Use functions to make code reusable YES
 // + Use console.log and alert to display messages YES
 // + Use some HTML and CSS to create a basic website. Use at least 4 different HTML tags YES
 // and style at least 2 of them. This does not need to look good! It is just a demo of what is 
 // covered. YES
 // + Get input from the user on a web page YES
-// + Make changes to the HTML or CSS  using JavaScript
-// + Use an event to trigger a change to a web page
+// + Make changes to the HTML or CSS  using JavaScript YES
+// + Use an event to trigger a change to a web page YES
