@@ -297,20 +297,20 @@ document.querySelector('.quote-button').addEventListener('click', function () {
     // calls the function
     displayRandomQuote();
 
-     // create restart button dynamically
-     const restartButton = document.createElement('button');
-     restartButton.classList.add('restart-button');
-     restartButton.textContent = 'Try Again!';
-     
-     // add restart button 
-     document.body.appendChild(restartButton);
- 
-     // event listener for restart button
-     restartButton.addEventListener('click', function () {
-         // reload the page to reset the state https://www.freecodecamp.org/news/refresh-the-page-in-javascript-js-reload-window-tutorial/#:~:text=reload(),to%20the%20browser%27s%20Refresh%20button.
-         location.reload();
-     });
+    // create restart button dynamically
+    const restartButton = document.createElement('button');
+    restartButton.classList.add('restart-button');
+    restartButton.textContent = 'Try Again!';
+
+    // add restart button 
+    document.body.appendChild(restartButton);
+
+    // event listener for restart button
+    restartButton.addEventListener('click', function () {
+        // reload the page to reset the state https://www.freecodecamp.org/news/refresh-the-page-in-javascript-js-reload-window-tutorial/#:~:text=reload(),to%20the%20browser%27s%20Refresh%20button.
+        location.reload();
     });
+});
 
 // Create a web app that takes input from the user and updates the web page based on the 
 // input. The HTML and CSS should be simple but present. The primary focus is on JavaScript. 
