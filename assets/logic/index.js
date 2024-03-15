@@ -305,10 +305,13 @@ document.querySelector('.quote-button').addEventListener('click', function () {
     // add restart button 
     document.body.appendChild(restartButton);
 
+    function refreshPage(){
+    window.location.href = window.location.href;
+}
     // event listener for restart button
     restartButton.addEventListener('click', function () {
         // reload the page to reset the state https://www.freecodecamp.org/news/refresh-the-page-in-javascript-js-reload-window-tutorial/#:~:text=reload(),to%20the%20browser%27s%20Refresh%20button.
-        location.reload();
+        refreshPage();
     });
 });
 
@@ -332,3 +335,16 @@ document.querySelector('.quote-button').addEventListener('click', function () {
 // + Get input from the user on a web page YES
 // + Make changes to the HTML or CSS  using JavaScript YES
 // + Use an event to trigger a change to a web page YES
+
+//https://stackoverflow.com/questions/56958553/reload-on-click-function-not-working-in-javascript
+
+// function refreshPage(){
+//     history.go(0);
+// }
+// OR
+
+// Use
+
+// function refreshPage(){
+//     window.location.href = window.location.href;
+// }
