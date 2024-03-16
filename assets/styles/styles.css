@@ -118,5 +118,6 @@ body {
 @media (max-width: 767px) {
     .quote-button {
         font-size: 16px;
+        padding: 7px 15px;
     }
 }
