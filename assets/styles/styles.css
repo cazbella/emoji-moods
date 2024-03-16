@@ -113,3 +113,10 @@ body {
     align-items: center;
     height: 10vh; 
 }
+
+
+@media (max-width: 767px) {
+    .quote-button {
+        font-size: 16px;
+    }
+}
